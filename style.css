@@ -8,4 +8,236 @@ Version: 1.0
 Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign, Webdevelopment, Webdev, Webdesigner, Webdeveloper, Webdesignerdeveloper, Webdesignerdeveloperstudent
 */
 
+/* Définition des couleurs */
+:root {
+    --highlight-color: #A599FF; /* Couleur pour les liens */
+    --background-header-footer: #0A0A0A; /* Couleur noir pour le header et le footer */
+    --background-body: #171515; /* Couleur pour le fond du body */
+}
+
+/* Import de la police Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Poppins:wght@400;700&display=swap');
+
+/* Style de base pour le header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px; /* Augmente le padding vertical pour plus de hauteur */
+    background-color: var(--background-header-footer); /* Couleur noir pour le header */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.logo a img {
+    height: 5vw; /* Ajuster la taille du logo de manière responsive */
+    max-height: 50px; /* Limite la taille maximale du logo pour éviter qu'il soit trop grand */
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.menu-items {
+    display: flex;
+    gap: 2vw;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    display: inline; /* Assure que les éléments du menu s'affichent en ligne */
+    margin-right: 3vw; /* Espace entre les éléments du menu */
+}
+
+.menu-items li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2vw; /* Taille responsive */
+    font-size: clamp(14px, 2vw, 18px); /* Limite la taille min/max */
+    transition: color 0.3s;
+}
+
+.menu-items li a:hover,
+.menu-items li a:focus {
+    color: var(--highlight-color); /* Change la couleur au survol ou focus */
+}
+
+/* Styles pour le mobile */
+@media (max-width: 768px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--background-header-footer); /* Couleur noir pour le menu mobile */
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-items.active {
+        display: flex;
+    }
+
+    .menu-items li {
+        display: block; /* Affiche les éléments du menu en bloc (liste verticale) */
+        margin: 10px 0;
+    }
+
+    .menu-items li a {
+        font-size: 6vw; /* Ajuste la taille du texte dans le menu mobile */
+    }
+}
+
+/* Bouton hamburger */
+.menu-toggle {
+    margin-right: 3vw;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .hamburger {
+    width: 5vw;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.menu-toggle .hamburger::before,
+.menu-toggle .hamburger::after {
+    content: '';
+    width: 5vw;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.menu-toggle .hamburger::before {
+    top: -8px;
+}
+
+.menu-toggle .hamburger::after {
+    top: 8px;
+}
+
+/* Affichage du bouton hamburger en mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: inline-block;
+    }
+}
+
+/* Couleur de fond du body */
+body {
+    margin: 0;
+    padding-top: 100px; /* Ajuster en fonction de la nouvelle hauteur du header */
+    padding-bottom: 60px; /* Ajuster en fonction de la hauteur du footer */
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--background-body);
+    font-size: 1vw; /* Taille de police responsive pour le corps */
+    font-size: clamp(14px, 1vw, 18px); /* Limite la taille min/max */
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--background-header-footer);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-content {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-content a {
+    color: var(--highlight-color);
+    font-size: 1.8vw; /* Taille responsive pour le lien de l'email */
+    font-size: clamp(14px, 1.8vw, 18px); /* Limite la taille min/max */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-content a:hover,
+.footer-content a:focus {
+    color: var(--highlight-color);
+}
+
+.footer-content p {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1vw;
+    font-size: clamp(12px, 1vw, 16px); /* Limite la taille min/max */
+}
+
+.footer-logo a {
+    text-decoration: none;
+}
+
+.footer-logo img {
+    height: 5vw; /* Ajuste la taille du logo de manière responsive */
+    max-height: 30px;
+}
+
+/* Responsive design pour centrer le footer en version mobile */
+@media (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+    }
+    .footer-logo {
+        margin-top: 20px;
+    }
+}
+
+/* Style pour le lien Télécharger mon CV */
+.download-cv a {
+    color: #fff;
+    font-size: 2vw;
+    font-size: clamp(16px, 2vw, 20px); /* Limite la taille min/max */
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.download-cv a:hover {
+    color: var(--highlight-color);
+}
+
+.download-cv a::after {
+    content: '';
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.download-cv a:hover::after {
+    background-color: var(--highlight-color);
+}

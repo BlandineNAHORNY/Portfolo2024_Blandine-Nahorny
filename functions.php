@@ -9,12 +9,8 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
 // Enregistre un menu de navigation
-function register_my_menus() {
-    register_nav_menus(
-        array(
-            'main-menu' => __( 'Menu Principal' ),
-            'footer-menu' => __( 'Menu Pied de Page' )
-        )
-    );
+function register_my_menu() {
+    register_nav_menu('header-menu', __('Header Menu'));
 }
-add_action( 'init', 'register_my_menus' );
+add_action('init', 'register_my_menu');
+
