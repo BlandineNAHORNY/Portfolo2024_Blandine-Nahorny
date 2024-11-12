@@ -5,7 +5,15 @@ get_header();
 ?>
 
 <div id="accueil">
-    <!-- Contenu de l'accueil -->
+<div class="intro-section">
+    <div class="background-text">COMMUNITY</div>
+    <div class="intro-content">
+        <p>Bonjour,</p>
+        <h1>Je m’appelle <span>Blandine</span></h1>
+        <p>Communication digitale</p>
+    </div>
+</div>
+
 </div>
 
 <div id="a-propos">

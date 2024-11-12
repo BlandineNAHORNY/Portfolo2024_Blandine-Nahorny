@@ -241,3 +241,55 @@ body {
 .download-cv a:hover::after {
     background-color: var(--highlight-color);
 }
+
+
+
+
+
+/* Styles pour le curseur principal */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(165, 153, 255, 0.8); /* Couleur semi-transparente pour l'effet design */
+    border: 2px solid var(--highlight-color);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+    z-index: 9999;
+    mix-blend-mode: difference; /* Mélange pour un effet moderne */
+}
+
+/* Styles pour le curseur secondaire (suiveur) */
+.custom-cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(165, 153, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+    z-index: 9998;
+}
+
+/* Effet de "grossissement" du curseur pour les liens */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Effet de grossissement et mise en avant du cercle trail au survol des éléments cliquables */
+a:hover ~ .custom-cursor-trail,
+button:hover ~ .custom-cursor-trail {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(165, 153, 255, 0.5);
+}

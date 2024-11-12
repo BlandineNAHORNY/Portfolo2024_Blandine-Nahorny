@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body 
+<?php body_class(); ?>>
     <header class="site-header">
         <div class="logo">
             <a href="<?php echo home_url(); ?>">
@@ -36,5 +37,9 @@
             });
         });
     </script>
+    
+    <div class="custom-cursor"></div>
+<div class="custom-cursor-trail"></div>
+
 </body>
 </html>
