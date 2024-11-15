@@ -14,3 +14,8 @@ function register_my_menu() {
 }
 add_action('init', 'register_my_menu');
 
+function custom_cursor_scripts() {
+    // Enregistre le fichier JavaScript pour le curseur
+    wp_enqueue_script('custom-cursor-js', get_template_directory_uri() . '/js/custom-cursor.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'custom_cursor_scripts');

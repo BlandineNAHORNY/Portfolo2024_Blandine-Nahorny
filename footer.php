@@ -4,7 +4,7 @@
         <a href="mailto:blandinenhy@gmail.com">blandinenhy@gmail.com</a>
         
         <p class="download-cv">
-            <a href="<?php echo get_template_directory_uri(); ?>/src/docs/cv.pdf" download>Télécharger mon CV</a>
+            <a href="<?php echo get_template_directory_uri(); ?>/src/pdf/CV_Blandine-NAHORNY.pdf" download>Télécharger mon CV</a>
         </p>
 
         

@@ -23,7 +23,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px; /* Augmente le padding vertical pour plus de hauteur */
+    padding: 15px 20px; /* Réduit le padding vertical pour un header plus compact */
     background-color: var(--background-header-footer); /* Couleur noir pour le header */
     color: #fff;
     position: fixed;
@@ -37,8 +37,9 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 }
 
 .logo a img {
-    height: 5vw; /* Ajuster la taille du logo de manière responsive */
-    max-height: 50px; /* Limite la taille maximale du logo pour éviter qu'il soit trop grand */
+    height: 4vw; /* Ajuste la taille du logo pour le mode desktop */
+    max-height: 40px;
+    margin-left: 20px;
 }
 
 .main-navigation {
@@ -56,33 +57,38 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 
 .menu-items li {
     display: inline; /* Assure que les éléments du menu s'affichent en ligne */
-    margin-right: 3vw; /* Espace entre les éléments du menu */
+    margin-right: 3vw;
 }
 
 .menu-items li a {
     color: #fff;
     text-decoration: none;
-    font-size: 2vw; /* Taille responsive */
-    font-size: clamp(14px, 2vw, 18px); /* Limite la taille min/max */
+    font-size: 2.5vw;
+    font-size: clamp(18px, 2.5vw, 24px);
+    padding: 10px 0;
     transition: color 0.3s;
 }
 
 .menu-items li a:hover,
 .menu-items li a:focus {
-    color: var(--highlight-color); /* Change la couleur au survol ou focus */
+    color: var(--highlight-color);
 }
 
-/* Styles pour le mobile */
+/* Styles pour le menu hamburger (mobile) */
 @media (max-width: 768px) {
+    .site-header {
+        padding: 10px 15px; /* Réduit encore le padding en mode mobile */
+    }
+
     .menu-items {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0;
         background-color: var(--background-header-footer); /* Couleur noir pour le menu mobile */
         width: 100%;
-        padding: 20px;
+        padding: 15px; /* Moins de padding pour un menu plus compact */
     }
 
     .menu-items.active {
@@ -90,12 +96,19 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     }
 
     .menu-items li {
-        display: block; /* Affiche les éléments du menu en bloc (liste verticale) */
-        margin: 10px 0;
+        display: block;
+        margin: 5px 0; /* Moins de marge pour un espacement plus compact */
     }
 
     .menu-items li a {
-        font-size: 6vw; /* Ajuste la taille du texte dans le menu mobile */
+        font-size: 4vw; /* Diminue encore la taille du texte dans le menu mobile */
+        padding: 8px 0; /* Moins de padding vertical */
+    }
+
+    /* Augmente légèrement la taille du logo en mode mobile pour qu'il soit plus visible */
+    .logo a img {
+        height: 8vw; /* Augmente légèrement pour le menu mobile */
+        max-height: 60px;
     }
 }
 
@@ -128,11 +141,11 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 }
 
 .menu-toggle .hamburger::before {
-    top: -8px;
+    top: -6px;
 }
 
 .menu-toggle .hamburger::after {
-    top: 8px;
+    top: 6px;
 }
 
 /* Affichage du bouton hamburger en mobile */
@@ -155,6 +168,19 @@ body {
 }
 
 /* Footer */
+/* Structure de la page pour garder le footer en bas */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1; /* Prend tout l'espace disponible pour pousser le footer en bas */
+}
+
+/* Styles du footer */
 .site-footer {
     background-color: var(--background-header-footer);
     color: #fff;
@@ -164,8 +190,10 @@ body {
     align-items: center;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
 }
 
+/* Contenu du footer */
 .footer-content {
     flex: 1;
     text-align: center;
@@ -209,6 +237,7 @@ body {
         margin-top: 20px;
     }
 }
+
 
 /* Style pour le lien Télécharger mon CV */
 .download-cv a {
@@ -292,4 +321,284 @@ button:hover ~ .custom-cursor-trail {
     width: 60px;
     height: 60px;
     background-color: rgba(165, 153, 255, 0.5);
+}
+
+
+
+
+
+
+/* Styles pour la page d'accueil */
+/* Conteneur principal */
+.intro-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #171515; /* Couleur de fond */
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Texte d'arrière-plan (COMMUNITY) */
+.background-text {
+    position: absolute;
+    font-size: 15vw; /* Taille responsive */
+    color: rgba(165, 153, 255, 0.05); /* Couleur violette très transparente */
+    font-weight: bold;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Conteneur de texte principal */
+.intro-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6); /* Fond noir semi-transparent */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure blanche semi-transparente */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet de profondeur */
+    max-width: 600px;
+    text-align: left;
+    backdrop-filter: blur(10px); /* Effet de flou */
+    margin: 20px;
+}
+
+/* Styles du texte */
+.intro-content .intro-greeting {
+    font-size: 1.2em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.intro-content h1 {
+    font-size: 4vw;
+    font-weight: normal;
+    color: #ffffff;
+    margin: 0.5em 0;
+    line-height: 1.2;
+}
+
+.intro-content h1 span {
+    color: #A599FF; /* Couleur violette */
+    font-weight: bold;
+}
+
+.intro-content .intro-role {
+    font-size: 1.5em;
+    color: #d3d3d3;
+    margin: 0.5em 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .background-text {
+        font-size: 20vw; /* Ajuste la taille pour les petits écrans */
+    }
+
+    .intro-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .intro-content .intro-greeting {
+        font-size: 1em;
+    }
+
+    .intro-content h1 {
+        font-size: 8vw; /* Augmente la taille pour les petits écrans */
+    }
+
+    .intro-content .intro-role {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .background-text {
+        font-size: 25vw; /* Ajuste encore pour les très petits écrans */
+    }
+
+    .intro-content h1 {
+        font-size: 10vw; /* Adapte la taille pour les très petits écrans */
+    }
+
+    .intro-content .intro-role {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+/* A propos */
+.about-section {
+    background-color: #111;
+    padding: 0px 40px 40px 40px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    max-width: 1200px; /* Augmentez à 1200px pour plus d'espace */
+    width: 95%; /* Ajuste pour prendre plus de place sur l'écran */
+    margin: 50px auto; /* Centre la section sur la page */	
+    border-radius: 8px;
+    position: relative;
+    z-index: 1; /* Assure que la section est en dessous du titre */
+}
+
+
+.about-title {
+    font-size: 3.5em;
+    color: #A599FF;
+    font-weight: bold;
+    position: relative;
+    top: -25px; /* Ajuste la hauteur pour chevaucher la section */
+    z-index: 2;
+    padding: 0 10px;
+    margin-bottom: -40px; /* Pour réduire l'espacement sous le titre */
+    background-color: transparent; /* Supprime le fond derrière le titre */
+    /* Supprime toute bordure ou ombre superflue */
+}
+
+.about-name {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.about-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-text h3 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.approval-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+}
+
+.about-role {
+    font-size: 1.2em;
+    color: #A599FF;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.download-cv {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-cv a {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.download-cv a::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px auto 0;
+    transition: background-color 0.3s;
+}
+
+.download-cv a:hover::after {
+    background-color: #A599FF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image img {
+        width: 150px;
+    }
+
+    .about-text h3 {
+        font-size: 1.8em;
+        text-align: center; /* Centre le texte "Blandine Nahorny" */
+    }
+
+    .about-role {
+        font-size: 1em;
+    }
+
+    .about-description {
+        font-size: 0.9em;
+    }
+
+    .download-cv a {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 2.5em;
+    }
+
+    .about-image img {
+        width: 120px;
+    }
+
+    .about-text h3 {
+        font-size: 1.5em;
+    }
+
+    .about-role {
+        font-size: 0.9em;
+    }
+
+    .about-description {
+        font-size: 0.9em;
+    }
 }
