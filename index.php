@@ -4,7 +4,6 @@
 get_header();
 ?>
 
-<body>
 
 <div id="accueil">
 
@@ -128,4 +127,3 @@ get_header();
 
 
 <div id="sparkle-container"></div>
-</body>

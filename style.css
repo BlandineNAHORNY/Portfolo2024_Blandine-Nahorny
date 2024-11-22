@@ -22,6 +22,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 /* HEADER */
 
 /* Général pour le header */
+/* Général pour le header */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -49,16 +50,17 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 
 /* Navbar (visible en desktop) */
 .menu-items {
-    display: flex; /* Montre le menu en format desktop */
+    display: flex;
     gap: 30px;
     list-style: none;
     margin: 0;
 }
 
+/* Liens du menu */
 .menu-items li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2em; /* Taille des liens en desktop */
+    font-size: 1.5em; /* Taille des liens en desktop */
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -73,22 +75,22 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 10px; /* Ajustement pour déplacer un peu plus à droite */
     position: relative;
 }
 
 .menu-toggle .hamburger {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    width: 30px;
+    gap: 6px; /* Espace entre les traits */
+    width: 35px;
     height: auto;
     position: relative;
 }
 
 .menu-toggle .hamburger span {
     display: block;
-    height: 4px;
+    height: 5px; /* Traits plus épais */
     width: 100%;
     background-color: #fff;
     border-radius: 2px;
@@ -108,27 +110,32 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Menu mobile ouvert */
+/* Menu mobile ouvert - Ajustement pour prendre toute la largeur */
 .menu-items.active {
-    display: flex; /* Affiche le menu mobile */
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start; /* Aligner les éléments vers le haut */
+    align-items: center; /* Centrer les éléments horizontalement */
     position: fixed;
-    top: 70px;
+    top: 50px; /* Décalage pour tenir compte du header, ajusté pour monter le menu */
     left: 0;
-    width: 100%;
+    width: 100%; /* Prendre toute la largeur de l'écran */
+    height: 100vh; /* Prend toute la hauteur de la page */
     background-color: #111;
-    padding: 20px;
+    padding: 40px 20px; /* Espacement autour des éléments du menu */
     list-style: none;
     z-index: 1000;
+    text-align: center; /* Centrer le texte du menu */
 }
 
+/* Aligner le texte à droite dans les éléments du menu */
 .menu-items li {
-    margin-bottom: 15px;
-    text-align: left;
+    margin-bottom: 20px; /* Plus d'espace entre les éléments du menu */
 }
 
+/* Liens plus grands dans le menu hamburger */
 .menu-items li a {
-    font-size: 1.5em; /* Texte plus grand dans le menu hamburger */
+    font-size: 1.6em; /* Texte plus grand dans le menu hamburger */
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -138,17 +145,25 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     color: #A599FF;
 }
 
+/* Affichage du logo lorsque le menu hamburger est ouvert */
+.menu-items.active .logo {
+    display: block; /* Affiche le logo */
+    margin-bottom: 40px; /* Espacement avant les éléments du menu */
+}
+
+
 /* Weglot dans le menu */
 .weglot-menu-item .country-selector {
-    background: none;
+    background-color: #0A0A0A;  /* Fond noir par défaut */
     border: none;
-    font-size: 1.2em;
-    color: #fff;
+    font-size: 1.5em;
+    color: #fff;  /* Texte blanc */
     cursor: pointer;
 }
 
 .weglot-menu-item .country-selector:hover {
-    color: #A599FF;
+    color: #A599FF;  /* Texte violet au survol */
+    background-color: #0A0A0A;  /* Fond noir au survol */
 }
 
 /* Responsive styles */
@@ -167,19 +182,21 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
         gap: 15px;
         background-color: #111;
         position: fixed;
-        top: 60px;
+        top: 90px;
         left: 0;
         width: 100%;
         padding: 20px;
         z-index: 1000;
+        text-align: center; /* Aligner le texte au centre */
     }
 
     .menu-items li {
-        margin-bottom: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
     }
 
     .menu-items li a {
-        font-size: 1.5em;
+        font-size: 1.8em; /* Taille plus grande pour les liens du menu */
     }
 
     .weglot-menu-item {
@@ -207,6 +224,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 
 
 
+/* SPARKLES */
 #sparkle-container {
     position: fixed;
     top: 0;
@@ -239,6 +257,20 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     }
 }
 
+
+
+
+/* Style de la barre de progression */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0; /* Initialement vide */
+    height: 5px;
+    background-color: #A599FF; /* Couleur de la barre de progression */
+    z-index: 9999; /* S'assure que la barre est au-dessus de tout */
+    transition: width 0.25s ease-out; /* Animation pour rendre la transition fluide */
+}
 
 
 

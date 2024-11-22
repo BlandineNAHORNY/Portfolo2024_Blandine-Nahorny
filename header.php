@@ -9,7 +9,8 @@
 <body <?php body_class(); ?>>
     <header class="site-header">
         <div class="logo">
-            <a href="<?php echo home_url(); ?>">
+            <!-- Ajout de l'événement click pour jouer le son -->
+            <a href="<?php echo home_url(); ?>" id="logo-link">
                 <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Logo.svg" alt="Logo NB">
             </a>
         </div>
@@ -46,7 +47,7 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const menuItems = document.querySelector('.menu-items');
 
-        // Chargement des fichiers audio
+        // Chargement des fichiers audio pour l'ouverture et la fermeture du menu
         const openSound = new Audio('<?php echo get_template_directory_uri(); ?>/src/mp3/menu-open.mp3');
         const closeSound = new Audio('<?php echo get_template_directory_uri(); ?>/src/mp3/menu-close.mp3');
 
@@ -61,8 +62,15 @@
                 closeSound.play();
             }
         });
-    });
 
+        // Ajout d'un événement sur le logo pour jouer un son lors du clic
+        const logoLink = document.getElementById('logo-link');
+        const logoClickSound = new Audio('<?php echo get_template_directory_uri(); ?>/src/mp3/logo-click.mp3');
+        
+        logoLink.addEventListener('click', function() {
+            logoClickSound.play(); // Joue le son lors du clic sur le logo
+        });
+    });
 
     document.addEventListener("mousemove", (e) => {
         const sparkleContainer = document.getElementById("sparkle-container");
@@ -82,16 +90,23 @@
             // Ajoute la paillette au conteneur
             sparkleContainer.appendChild(sparkle);
 
-            // Supprime la paillette après l'animation
+            // Supprime la paille après l'animation
             setTimeout(() => {
                 sparkle.remove();
             }, 500); // Durée de l'animation (0.5s)
         }
     });
+
+    document.addEventListener('scroll', function() {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progress-bar').style.width = scrollPercent + '%';
+        });
 </script>
 
-
 <div id="sparkle-container"></div>
+<div id="progress-bar"></div>
 
 </body>
 </html>
