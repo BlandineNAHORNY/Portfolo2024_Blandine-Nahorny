@@ -328,6 +328,7 @@ html, body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
+    margin-top: 50px; /* Pousse le footer en bas de la page */
 }
 
 /* Contenu du footer */
@@ -423,19 +424,26 @@ html, body {
     width: 60%;                 /* Largeur par défaut */
     margin: 20px auto;          /* Centre la barre avec de l'espacement en haut et en bas */
     transition: width 0.3s ease; /* Ajoute une transition pour les changements de largeur */
+    margin-bottom: 60px; /* Ajoute un espacement en bas pour respirer */
+    margin-top: 60px; /* Ajoute un espacement en bas pour respirer */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .styled-bar {
         width: 70%; /* Augmente la largeur pour s'adapter à des écrans moyens */
+        margin: 20px auto;          /* Centre la barre avec de l'espacement en haut et en bas */
+        margin-bottom: 60px; /* Ajoute un espacement en bas pour respirer */
+        margin-top: 60px; /* Ajoute un espacement en bas pour respirer */
     }
 }
 
 @media (max-width: 480px) {
     .styled-bar {
         width: 70%; /* La barre prend presque toute la largeur sur petits écrans */
-        margin: 15px auto; /* Réduit l'espacement vertical pour petits écrans */
+        margin: 20px auto;          /* Centre la barre avec de l'espacement en haut et en bas */
+        margin-bottom: 60px; /* Ajoute un espacement en bas pour respirer */
+        margin-top: 60px; /* Ajoute un espacement en bas pour respirer */
     }
 }
 
@@ -788,6 +796,82 @@ html, body {
 }
 
 
+
+
+
+
+
+
+
+
+/* Style général pour la section des liens sociaux */
+.social-links {
+    text-align: center;
+}
+
+.social-links h2 {
+    font-size: 2.5em;
+    color: #A599FF; /* Couleur violette */
+    margin-bottom: 60px; /* Réduction de l'espacement sous le titre */
+    margin-top: 50px; /* Ajout d'espacement au-dessus du titre */
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Espacement entre les icônes */
+    flex-wrap: wrap; /* Permet aux icônes de s'ajuster lorsque l'espace est réduit */
+}
+
+.icons a {
+    display: inline-block;
+}
+
+.icons img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.icons img:hover {
+    transform: scale(1.1); /* Effet de zoom au survol */
+}
+
+/* Responsive - ajustement pour les petits écrans (tablettes et petites résolutions) */
+@media (max-width: 768px) {
+    .social-links h2 {
+        font-size: 2em; /* Réduction de la taille du texte pour les petits écrans */
+        margin-bottom: 50px; /* Espacement réduit sous le titre */
+        margin-top: 40px; /* Espacement réduit au-dessus du titre */
+    }
+
+    .icons {
+        gap: 40px; /* Réduction de l'espacement entre les icônes */
+    }
+
+    .icons img {
+        width: 60px; /* Réduction de la taille des icônes */
+        height: 60px;
+    }
+}
+
+/* Responsive - ajustement pour les très petits écrans (smartphones) */
+@media (max-width: 480px) {
+    .social-links h2 {
+        font-size: 1.6em; /* Réduction supplémentaire pour les très petits écrans */
+        margin-bottom: 40px; /* Espacement encore réduit sous le titre */
+        margin-top: 20px; /* Espacement encore réduit au-dessus du titre */
+    }
+
+    .icons {
+        gap: 25px; /* Réduction de l'espacement entre les icônes */
+    }
+
+    .icons img {
+        width: 40px; /* Réduction encore plus petite pour les icônes */
+        height: 40px;
+    }
+}
 
 
 

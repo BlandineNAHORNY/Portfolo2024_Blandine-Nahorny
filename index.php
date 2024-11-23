@@ -110,6 +110,8 @@ get_header();
 </div>
 </div>
 
+<div class="styled-bar"></div>
+</div>
 
 <div id="competences">
 
@@ -121,9 +123,33 @@ get_header();
 
 <div id="contact">
     <!-- Contenu de la section Contact -->
+
+    <div class="styled-bar"></div>
+    </div>
 </div>
 
- 
+<div class="social-links">
+    <h2>RETROUVEZ MOI ÉGALEMENT ICI !</h2>
+    <div class="icons">
+        <a href="https://github.com/BlandineNAHORNY" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/svg/GitHub.svg" alt="GitHub">
+        </a>
+        <a href="https://www.instagram.com/blandine_nhy/" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/blandine-nahorny/" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/svg/LinkedIn.svg" alt="LinkedIn">
+        </a>
+        <a href="https://www.behance.net/blandinenahorny#" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Behance.svg" alt="Behance">
+        </a>
+    </div>
+    
+</div>
+
 
 
 <div id="sparkle-container"></div>
+
+
+<?php get_footer(); ?>
