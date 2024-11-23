@@ -61,6 +61,7 @@ get_header();
     <h2 class="formations-title">MES FORMATIONS ...</h2>
 
     <div class="formation-item">
+    <span class="formation-date">2023 à 2026</span>
         <div class="formation-content">
             <img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-mmi.webp" alt="Logo MMI" class="formation-logo">
             <div class="formation-details">
@@ -69,10 +70,10 @@ get_header();
                 <p>Spécialité Com’ / UX Design</p>
             </div>
         </div>
-        <span class="formation-date">2023 à 2026</span>
     </div>
 
     <div class="formation-item">
+    <span class="formation-date">2022</span>
         <div class="formation-content">
             <img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-ub.webp" alt="Logo UB" class="formation-logo">
             <div class="formation-details">
@@ -81,10 +82,10 @@ get_header();
                 <p>Option Anglais</p>
             </div>
         </div>
-        <span class="formation-date">2022</span>
     </div>
 
     <div class="formation-item">
+    <span class="formation-date">2019 à 2022</span>
         <div class="formation-content">
             <img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-lycee.webp" alt="Logo Lycée" class="formation-logo">
             <div class="formation-details">
@@ -93,10 +94,10 @@ get_header();
                 <p>Option EuroAnglais</p>
             </div>
         </div>
-        <span class="formation-date">2019 à 2022</span>
     </div>
 
     <div class="formation-item">
+    <span class="formation-date">2019</span>
         <div class="formation-content">
             <img src="<?php echo get_template_directory_uri(); ?>/src/img/logo-republique-fr.webp" alt="Logo République Française" class="formation-logo">
             <div class="formation-details">
@@ -105,7 +106,6 @@ get_header();
                 <p>Sujets abordés : Météorologie, Navigation, Mécanique du vol et l'Histoire de l'aviation.</p>
             </div>
         </div>
-        <span class="formation-date">2019</span>
     </div>
 </div>
 </div>

@@ -413,6 +413,9 @@ html, body {
 
 
 
+
+
+
 /* Bar de transition */
 .styled-bar {
     height: 2px;                /* Épaisseur de la barre */
@@ -618,6 +621,7 @@ html, body {
 
 
 
+
 /* Formations */
 #formations {
     max-width: 1200px;
@@ -636,7 +640,7 @@ html, body {
 
 .formation-item {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Assure que les éléments sont alignés en haut */
     gap: 20px;
     background: #111;
     color: #fff;
@@ -654,14 +658,16 @@ html, body {
     background-color: #2A1947;
 }
 
+/* Date positionnée en haut, quel que soit le format */
 .formation-date {
     font-size: 1.8em; /* Taille de la date */
     font-weight: bold;
     color: var(--highlight-color);
     position: absolute;
-    top: 10px; /* Positionne la date en haut */
+    top: 5px; /* Réduction de la marge entre la date et le logo */
     left: 20px; /* Place la date à gauche */
     text-align: left;
+    z-index: 2; /* Pour s'assurer qu'elle reste au-dessus des autres éléments */
 }
 
 .formation-content {
@@ -671,6 +677,8 @@ html, body {
     align-items: flex-start;
     margin-top: 40px; /* Ajoute un espacement sous la date */
     text-align: left;
+    width: 100%; /* Assure que le contenu occupe toute la largeur disponible */
+    flex-direction: row; /* Aligne les éléments sur la même ligne */
 }
 
 .formation-logo {
@@ -703,72 +711,88 @@ html, body {
     }
 
     .formations-title {
-        font-size: 3em;
+        font-size: 2.8em; /* Réduction de la taille du titre pour les écrans plus petits */
         margin-bottom: 20px;
     }
 
     .formation-item {
-        flex-direction: column; /* Empile les éléments verticalement */
+        flex-direction: column; /* Empile les éléments horizontalement */
         text-align: left;
-        padding: 20px;
+        padding: 15px;
     }
 
+    /* Alignement de la date et du logo */
     .formation-date {
-        font-size: 1.5em; /* Taille réduite pour la date */
-        position: relative; /* Reste en haut */
-        margin-bottom: 10px;
+        font-size: 1.8em; /* Taille réduite pour la date */
+        position: relative;
+        top: 30px; /* Assure que la date est bien alignée */
+        left: -5px;
+
     }
 
     .formation-content {
-        flex-direction: row; /* Logo à gauche, texte à droite */
-        gap: 10px;
-        align-items: flex-start;
+        flex-direction: row; /* Le contenu est maintenant aligné horizontalement */
+        gap: 15px;
+        align-items: center; /* Aligne la date et le logo */
     }
 
     .formation-logo {
-        width: 60px; /* Taille réduite pour le logo */
+        width: 80px; /* Taille réduite pour le logo */
+        margin-top: 0; /* Réduction de l'espace au-dessus du logo */
     }
 
     .formation-details h3 {
-        font-size: 1.5em; /* Taille réduite pour le titre */
+        font-size: 1.6em; /* Taille réduite pour le titre */
     }
 
     .formation-details p {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
 @media (max-width: 480px) {
     .formations-title {
-        font-size: 2.5em;
-        margin-bottom: 15px;
+        font-size: 2.2em;
+        margin-bottom: 10px;
     }
 
     .formation-item {
-        padding: 15px;
+        padding: 10px;
     }
 
     .formation-date {
-        font-size: 1.2em; /* Taille adaptée pour petits écrans */
+        font-size: 1.5em; /* Taille adaptée pour petits écrans */
         position: relative;
-        margin-bottom: 10px;
+        top: 30px; /* Assure que la date est en haut, alignée avec le logo */
+        left: -5px;
     }
 
     .formation-content {
         flex-direction: row; /* Logo à gauche, texte à droite */
-        align-items: flex-start;
-        gap: 10px;
+        align-items: center; /* Aligne la date et le logo */
+        gap: 15px;
+        text-align: left; /* Aligne les éléments à gauche */
     }
 
     .formation-logo {
-        width: 50px; /* Réduction supplémentaire pour le logo */
+        width: 60px; /* Réduction supplémentaire pour le logo */
     }
 
     .formation-details h3 {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     .formation-details p {
         font-size: 0.9em;
     }
 }
+
+
+
+
+
+
+
+
+
+
