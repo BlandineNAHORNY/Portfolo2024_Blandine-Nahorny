@@ -122,11 +122,32 @@ get_header();
 </div>
 
 <div id="contact">
-    <!-- Contenu de la section Contact -->
+    <h2>UNE QUESTION ? <br> UN PROJET ?</h2>
+    <p>Pour le besoin de toutes informations complémentaires, ou une envie de collaborer ensemble, n'hésitez surtout pas à me laisser un message.</p>
+
+    <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" value="<?php if (isset($_POST['name'])) echo esc_attr($_POST['name']); ?>" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="<?php if (isset($_POST['email'])) echo esc_attr($_POST['email']); ?>" required />
+
+        <!-- Nouveau champ Objet -->
+        <label for="subject">Objet</label>
+        <input type="text" id="subject" name="subject" value="<?php if (isset($_POST['subject'])) echo esc_attr($_POST['subject']); ?>" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required><?php if (isset($_POST['message'])) echo esc_textarea($_POST['message']); ?></textarea>
+
+        <input type="submit" name="submit_contact" value="Envoyer" />
+    </form>
 
     <div class="styled-bar"></div>
     </div>
 </div>
+
+
+
 
 <div class="social-links">
     <h2>RETROUVEZ MOI ÉGALEMENT ICI !</h2>
