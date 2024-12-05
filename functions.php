@@ -49,3 +49,4 @@ function handle_contact_form_submission() {
     }
 }
 add_action('wp_head', 'handle_contact_form_submission');
+

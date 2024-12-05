@@ -72,30 +72,6 @@
         });
     });
 
-    document.addEventListener("mousemove", (e) => {
-        const sparkleContainer = document.getElementById("sparkle-container");
-
-        // Crée plusieurs paillettes à chaque mouvement de la souris
-        const sparkleCount = 10; // Plus de paillettes par mouvement
-        for (let i = 0; i < sparkleCount; i++) {
-            const sparkle = document.createElement("div");
-            sparkle.className = "sparkle";
-
-            // Position aléatoire proche de la souris
-            const offsetX = (Math.random() - 0.5) * 30; // Déplacement max de 15px sur X
-            const offsetY = (Math.random() - 0.5) * 30; // Déplacement max de 15px sur Y
-            sparkle.style.left = `${e.pageX + offsetX}px`;
-            sparkle.style.top = `${e.pageY + offsetY}px`;
-
-            // Ajoute la paillette au conteneur
-            sparkleContainer.appendChild(sparkle);
-
-            // Supprime la paille après l'animation
-            setTimeout(() => {
-                sparkle.remove();
-            }, 500); // Durée de l'animation (0.5s)
-        }
-    });
 
     document.addEventListener('scroll', function() {
             var scrollTop = window.scrollY || document.documentElement.scrollTop;

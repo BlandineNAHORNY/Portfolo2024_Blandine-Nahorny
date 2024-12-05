@@ -972,3 +972,146 @@ form textarea:focus {
 
 
 
+
+
+/* compétences */
+/* Container for the skills */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+    margin-top: 50px;
+    perspective: 1000px; /* Pour ajouter de la profondeur pour la rotation */
+    padding: 0 200px; /* Ajout de marges à droite et à gauche pour le container */
+}
+
+/* Skill card styles */
+.skill-card {
+    background-color: #111;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease; /* Vitesse réduite pour une animation plus douce */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transform-style: preserve-3d; /* Pour activer l'effet 3D */
+    text-align: center; /* Centrer le texte à l'intérieur de la carte */
+}
+
+/* Skill title styles */
+.skill-title1 {
+    font-size: 3.5em;
+    color: var(--highlight-color);
+    margin-bottom: 40px;
+    text-align: left; /* Alignement à gauche pour le titre */
+    margin-left: 300px; /* Décalage du titre de 350px vers la droite */
+}
+
+/* Skill title styles */
+.skill-title {
+    font-size: 1.5em;
+    color: #A599FF;
+    margin-bottom: 15px; /* Espace plus grand sous le titre */
+    font-weight: bold; /* Mettre le titre en gras */
+}
+
+/* Skill content styles */
+.skill-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centrer le texte et le contenu dans la carte */
+    text-align: center; /* Assurer que tout le contenu est centré */
+}
+
+/* Logos inside the card */
+.skills-logos {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Un peu plus d'espace entre les logos */
+    margin-top: 20px;
+}
+
+.skills-logos img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+/* Hover effect for skill cards - 90 degree rotation */
+.skill-card:hover {
+    transform: rotateY(90deg); /* Rotation de 90° sur l'axe Y */
+    box-shadow: 0 0 20px 5px rgba(165, 153, 255, 0.8); /* Glow effect */
+}
+
+/* Focus effect when touched on mobile */
+.skill-card:active {
+    transform: rotateY(35deg); /* Rotation de 90° sur mobile au toucher */
+    box-shadow: 0 0 20px 5px rgba(165, 153, 255, 0.8); /* Glow effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+        padding: 0 50px; /* Ajuste les marges à gauche et à droite pour les tablettes */
+    }
+
+    .skill-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .skill-title1 {
+        margin-left: 150px; /* Réduit le décalage pour les tablettes */
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* 1 card per row on phones */
+        padding: 0 20px; /* Ajuste les marges à gauche et à droite pour les petits écrans */
+    }
+
+    .skill-title1 {
+        margin-left: 10px; /* Pas de décalage pour les petits écrans */
+        font-size: 2em; /* Réduit la taille du titre sur téléphone */
+    }
+
+    .skill-title {
+        font-size: 1.4em;
+    }
+
+    .skill-content p {
+        font-size: 1em;
+    }
+}
+
+
+
+
+
+/* Accueil */
+/* Pour garantir que les images sont responsives */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: -70px; /* Ajoute un espacement au-dessus de l'image */   
+}
+
+/* Si nécessaire, pour cacher ou ajuster les images de fond */
+@media (max-width: 768px) {
+    .responsive-img {
+        width: 100%; /* Pour s'assurer que l'image prend toute la largeur de l'écran */
+    }
+}

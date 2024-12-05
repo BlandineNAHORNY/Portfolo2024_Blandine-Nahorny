@@ -6,6 +6,10 @@ get_header();
 
 
 <div id="accueil">
+<picture>
+  <source srcset="<?php echo get_template_directory_uri(); ?>/src/img/Accueil-mobile.webp" media="(max-width: 768px)">
+  <img src="<?php echo get_template_directory_uri(); ?>/src/img/Accueil.webp" alt="Accueil" class="responsive-img">
+</picture>
 
 
 </div>
@@ -110,10 +114,83 @@ get_header();
 </div>
 </div>
 
-<div class="styled-bar"></div>
+
 </div>
 
 <div id="competences">
+<div class="styled-bar"></div>
+    <h2 class="skill-title1">MES COMPETENCES ...</h2>
+
+    <div class="skills-container">
+        <div class="skill-card">
+            <span class="skill-title">Design graphique et création visuelle</span>
+            <div class="skill-content">
+                <p>Outils dédiés à la création visuelle, incluant la retouche d'images, l'illustration, la mise en page, et le montage vidéo.</p>
+                <div class="skills-logos">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Photoshop.svg" alt="Photoshop">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Illustrator.svg" alt="Illustrator">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/InDesign.svg" alt="InDesign">
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <span class="skill-title">UI/UX et prototypage</span>
+            <div class="skill-content">
+                <p>Solutions pour concevoir des interfaces et prototypes interactifs, facilitant la collaboration entre designers et développeurs.</p>
+                <div class="skills-logos">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Figma.svg" alt="Figma">
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <span class="skill-title">Gestion de projets et collaboration</span>
+            <div class="skill-content">
+                <p>Plateformes permettant d’organiser les tâches, de suivre les projets et d’améliorer la collaboration au sein des équipes.</p>
+                <div class="skills-logos">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Trello.svg" alt="Trello">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Asana.svg" alt="Asana">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Notion.svg" alt="Notion">
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <span class="skill-title">Développement web et programmation</span>
+            <div class="skill-content">
+                <p>Outils pour coder, gérer des projets web et utiliser les technologies front-end et frameworks modernes.</p>
+                <div class="skills-logos">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Visual-Studio.svg" alt="VS Code">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Vuejs.svg" alt="Vue.js">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/tailwind_css.svg" alt="Tailwind">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/GitHub.svg" alt="GitHub">
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <span class="skill-title">CMS et création de sites web</span>
+            <div class="skill-content">
+                <p>Systèmes de gestion de contenu pour créer et gérer des sites web, adaptés à des utilisateurs de tous niveaux.</p>
+                <div class="skills-logos">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/WordPress.svg" alt="WordPress">
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <span class="skill-title">Productivité et bureautique</span>
+            <div class="skill-content">
+                <p>Suite d'outils conçus pour améliorer la productivité, incluant des solutions de bureautique et de création multimédia.</p>
+                <div class="skills-logos">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Office365_logo.svg" alt="Office Suite">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/svg/ADOBE_logo.svg" alt="Suite Adobe">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
 
