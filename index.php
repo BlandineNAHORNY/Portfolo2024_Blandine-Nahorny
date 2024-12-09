@@ -6,12 +6,14 @@ get_header();
 
 
 <div id="accueil">
-<picture>
-  <source srcset="<?php echo get_template_directory_uri(); ?>/src/img/Accueil-mobile.webp" media="(max-width: 768px)">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/img/Accueil.webp" alt="Accueil" class="responsive-img">
-</picture>
-
-
+<div data-title="COMMUNITY" class="hero">
+    <div class="space-y-4 hero_leftcontent">
+      <p>Bonjour,</p>
+      <h1>Je m'appelle <span>Blandine</span></h1>
+      <p>Communication digitale</p>
+    </div>
+    <div class="hero_rightcontent"></div>
+  </div>
 </div>
 
 <div id="a-propos"><!-- Placez le titre en dehors de la section -->

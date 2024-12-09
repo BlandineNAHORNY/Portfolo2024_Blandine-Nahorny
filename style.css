@@ -1048,7 +1048,7 @@ form textarea:focus {
 
 /* Hover effect for skill cards - 90 degree rotation */
 .skill-card:hover {
-    transform: rotateY(90deg); /* Rotation de 90° sur l'axe Y */
+    transform: rotateY(35deg); /* Rotation de 90° sur l'axe Y */
     box-shadow: 0 0 20px 5px rgba(165, 153, 255, 0.8); /* Glow effect */
 }
 
@@ -1098,20 +1098,151 @@ form textarea:focus {
 
 
 
-
-/* Accueil */
+//* Accueil */
 /* Pour garantir que les images sont responsives */
-.responsive-img {
+.hero {
+    margin-top: -80px; /* Ajoute un espacement au-dessus du contenu */
+    margin-bottom: 150px; /* Ajoute un espacement en dessous du contenu */
+    padding: 4rem 5%;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    flex-direction: column; /* Aligner verticalement les éléments sur mobile */
+    justify-content: flex-start; /* Aligne le contenu en haut */
+  }
+  
+  .hero::before {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    margin-top: -70px; /* Ajoute un espacement au-dessus de l'image */   
-}
-
-/* Si nécessaire, pour cacher ou ajuster les images de fond */
-@media (max-width: 768px) {
-    .responsive-img {
-        width: 100%; /* Pour s'assurer que l'image prend toute la largeur de l'écran */
+    color: #a599ff17;
+    font-weight: 800;
+    content: attr(data-title);
+    text-align: left; /* Aligner le texte à gauche */
+    word-wrap: break-word; /* Permet de couper le texte si nécessaire */
+    top: 0;
+    left: 0;
+    font-size: 4rem; /* Augmenté pour rendre le texte plus visible sur mobile */
+    line-height: 1;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    line-height: 1.5;
+    text-align: left; /* Garder l'alignement à gauche pour le titre */
+  }
+  
+  .hero h1 > span {
+    color: #A599FF;
+    font-weight: 800;
+  }
+  
+  .hero_leftcontent {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 0.75rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(64px);
+    color: white;
+    font-size: 1.25rem;
+    border: 1px solid #c4c4c476;
+    background-color: #c4c4c407;
+    text-align: left; /* Aligner le texte à gauche */
+  }
+  
+  .hero_rightcontent {
+    background-color: #A273EE54;
+    width: 100%;
+    position: relative;
+    top: 20%;
+    bottom: 20%;
+    z-index: -20;
+    padding: 10px; /* Ajout de padding pour plus de visibilité */
+  }
+  
+  /* Responsive Design pour des écrans plus larges */
+  @media (min-width: 768px) {
+    .hero {
+      padding: 4rem 15%;
+      flex-direction: row; /* Alignement en ligne sur grand écran */
     }
-}
+  
+    .hero::before {
+      font-size: 28rem; /* Ajuste la taille du texte */
+    }
+  
+    .hero h1 {
+      font-size: 6rem;
+    }
+  
+    .hero p {
+      font-size: 3rem;
+    }
+  
+    .hero_leftcontent {
+      width: 48rem;
+      left: 2%;
+      top: 10%;
+      padding: 4rem 3rem;
+      font-size: 3rem;
+    }
+  
+    .hero_rightcontent {
+      width: 50%;
+      right: 2%;
+      top: 10%;
+      bottom: 10%;
+    }
+  }
+  
+  /* Responsive Design pour les petits écrans (mobile) */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 5%;
+      flex-direction: column; /* Maintient la colonne pour les petits écrans */
+      justify-content: flex-start; /* Aligne le contenu en haut */
+    }
+  
+    .hero::before {
+      font-size: 4rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
+      line-height: 1.2;
+      top: 0;
+      left: 0;
+    }
+  
+    .hero h1 {
+      font-size: 3rem; /* Taille du titre réduite pour mobile */
+    }
+  
+    .hero_leftcontent {
+      padding: 2rem 0.75rem;
+      font-size: 1.5rem; /* Réduction de la taille du texte */
+      text-align: left; /* Alignement du texte à gauche */
+      margin-top: 2rem;
+      width: 100%;
+      height: auto;
+    }
+  
+    .hero_rightcontent {
+      width: 100%; /* Prend toute la largeur disponible */
+      position: relative;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -10;
+    }
+  }
+  
+  /* Petit ajustement sur mobile très petit */
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2.5rem; /* Taille encore réduite pour petits écrans */
+    }
+  
+    .hero_leftcontent {
+      font-size: 1.1rem; /* Réduction supplémentaire pour la lecture */
+    }
+  }
+  
