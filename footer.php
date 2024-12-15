@@ -8,7 +8,7 @@
         </p>
 
         
-        <p>© <?php echo date('Y'); ?> Blandine Nahorny. Tous droits réservés.</p>
+        <p class="footer-credit">© <?php echo date('Y'); ?> Blandine Nahorny. Tous droits réservés.</p>
     </div>
     
     <div class="footer-logo">
@@ -18,7 +18,6 @@
     </div>
 </footer>
 
-<?php wp_footer(); ?>
 
 </body>
 </html>

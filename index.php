@@ -14,6 +14,7 @@ get_header();
     </div>
     <div class="hero_rightcontent"></div>
   </div>
+  <div class="styled-bar"></div>
 </div>
 
 <div id="a-propos"><!-- Placez le titre en dehors de la section -->

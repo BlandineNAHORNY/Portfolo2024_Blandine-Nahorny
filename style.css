@@ -56,7 +56,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 .menu-items li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5em; /* Taille des liens en desktop */
+    font-size: 1.4em; /* Taille des liens en desktop */
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -131,7 +131,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 
 /* Liens plus grands dans le menu hamburger */
 .menu-items li a {
-    font-size: 1.6em; /* Texte plus grand dans le menu hamburger */
+    font-size: 1.2em; /* Texte plus grand dans le menu hamburger */
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -152,7 +152,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 .weglot-menu-item .country-selector {
     background-color: #0A0A0A;  /* Fond noir par défaut */
     border: none;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #fff;  /* Texte blanc */
     cursor: pointer;
 }
@@ -192,7 +192,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     }
 
     .menu-items li a {
-        font-size: 1.8em; /* Taille plus grande pour les liens du menu */
+        font-size: 1.2em; /* Taille plus grande pour les liens du menu */
     }
 
     .weglot-menu-item {
@@ -200,7 +200,7 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     }
 
     .weglot-menu-item .country-selector {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 }
 
@@ -317,7 +317,7 @@ html, body {
 .site-footer {
     background-color: var(--background-header-footer);
     color: #fff;
-    padding: 20px;
+    padding: 30px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -325,20 +325,22 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
     margin-top: 50px; /* Pousse le footer en bas de la page */
+    flex-wrap: wrap; /* Permet aux éléments de se répartir en plusieurs lignes si nécessaire */
 }
 
 /* Contenu du footer */
 .footer-content {
     flex: 1;
     text-align: center;
+    margin-bottom: 20px; /* Espace entre chaque bloc de contenu */
 }
 
 .footer-content a {
     color: var(--highlight-color);
-    font-size: 1.8vw; /* Taille responsive pour le lien de l'email */
-    font-size: clamp(14px, 1.8vw, 18px); /* Limite la taille min/max */
+    font-size: clamp(16px, 1.5vw, 20px); /* Ajuste la taille des liens de manière responsive */
     text-decoration: none;
     transition: color 0.3s;
+    margin: 0 20px; /* Ajout d'un espace entre les liens */
 }
 
 .footer-content a:hover,
@@ -348,8 +350,7 @@ html, body {
 
 .footer-content p {
     color: #fff;
-    margin: 10px 0;
-    font-size: 1vw;
+    margin: 15px 0; /* Augmenter l'espacement autour du texte */
     font-size: clamp(12px, 1vw, 16px); /* Limite la taille min/max */
 }
 
@@ -358,25 +359,45 @@ html, body {
 }
 
 .footer-logo img {
-    height: 5vw; /* Ajuste la taille du logo de manière responsive */
-    max-height: 30px;
+    height: 8vw; /* Ajuste la taille du logo de manière responsive */
+    max-height: 40px;
+    margin: 0 20px; /* Ajoute de l'espace autour du logo */
 }
 
 /* Responsive design pour centrer le footer en version mobile */
 @media (max-width: 768px) {
     .site-footer {
         flex-direction: column;
+        padding: 20px 15px; /* Réduit le padding pour les petits écrans */
     }
     .footer-logo {
         margin-top: 20px;
     }
+    .footer-content a {
+        font-size: clamp(14px, 2.5vw, 18px); /* Augmente légèrement la taille pour les petits écrans */
+        margin: 10px 0;
+    }
 }
 
+/* Responsive design pour les très petits écrans (mobile très petit) */
+@media (max-width: 480px) {
+    .footer-content p {
+        font-size: 14px; /* Taille réduite pour les petits écrans */
+    }
+
+    .footer-logo img {
+        height: 10vw; /* Réduit la taille du logo pour les très petits écrans */
+        max-height: 30px;
+    }
+
+    .download-cv a {
+        font-size: clamp(14px, 3vw, 18px); /* Ajuste la taille du lien pour les petits écrans */
+    }
+}
 
 /* Style pour le lien Télécharger mon CV */
 .download-cv a {
     color: #fff;
-    font-size: 2vw;
     font-size: clamp(16px, 2vw, 20px); /* Limite la taille min/max */
     font-weight: bold;
     text-decoration: none;
@@ -384,6 +405,7 @@ html, body {
     display: inline-block;
     padding-bottom: 5px;
     transition: color 0.3s;
+    margin-top: 20px; /* Plus d'espace au-dessus */
 }
 
 .download-cv a:hover {
@@ -596,6 +618,7 @@ html, body {
 @media (max-width: 480px) {
     .about-title {
         font-size: 3em; /* Augmente légèrement pour les petits écrans */
+        
     }
 
     .about-image img {
@@ -625,70 +648,70 @@ html, body {
 
 
 
-
 /* Formations */
 #formations {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px 40px;
+    max-width: 1000px; /* Réduit la largeur pour plus d'harmonie */
+    margin: 40px auto;
+    padding: 15px 20px; /* Espacement ajusté */
     background: var(--background-body);
     border-radius: 10px;
 }
 
 .formations-title {
-    font-size: 3.5em;
+    font-size: 4em; /* Réduit la taille du titre */
     color: var(--highlight-color);
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Réduction de l'espace sous le titre */
     text-align: left; /* Alignement à gauche pour le titre */
 }
 
 .formation-item {
     display: flex;
     align-items: flex-start; /* Assure que les éléments sont alignés en haut */
-    gap: 20px;
+    gap: 15px; /* Espacement réduit entre les éléments */
     background: #111;
     color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
+    margin-bottom: 20px; /* Moins d'espace entre les items */
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
     transition: transform 0.4s, background-color 0.4s;
 }
 
 .formation-item:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     background-color: #2A1947;
 }
 
 /* Date positionnée en haut, quel que soit le format */
 .formation-date {
-    font-size: 1.8em; /* Taille de la date */
+    font-size: 1.4em; /* Taille de la date réduite */
     font-weight: bold;
     color: var(--highlight-color);
     position: absolute;
-    top: 5px; /* Réduction de la marge entre la date et le logo */
-    left: 20px; /* Place la date à gauche */
+    top: 5px;
+    left: 20px;
     text-align: left;
-    z-index: 2; /* Pour s'assurer qu'elle reste au-dessus des autres éléments */
+    z-index: 2;
+    margin-bottom: 10px; /* Espacement réduit sous la date */
 }
 
 .formation-content {
     display: flex;
     flex: 1;
-    gap: 20px;
+    gap: 15px;
     align-items: flex-start;
-    margin-top: 40px; /* Ajoute un espacement sous la date */
+    margin-top: 20px; /* Espacement réduit sous la date */
     text-align: left;
-    width: 100%; /* Assure que le contenu occupe toute la largeur disponible */
-    flex-direction: row; /* Aligne les éléments sur la même ligne */
+    width: 100%;
+    flex-direction: row;
 }
 
 .formation-logo {
-    width: 70px;
+    width: 60px; /* Réduction de la taille des logos */
     border-radius: 5px;
-    flex-shrink: 0; /* Garde une taille fixe pour le logo */
+    flex-shrink: 0;
 }
 
 .formation-details {
@@ -696,15 +719,15 @@ html, body {
 }
 
 .formation-details h3 {
-    font-size: 1.8em;
+    font-size: 1.6em; /* Taille du titre réduite */
     font-weight: bold;
     margin: 0;
 }
 
 .formation-details p {
-    font-size: 1.2em;
+    font-size: 1.1em; /* Taille du texte réduite */
     margin: 5px 0;
-    line-height: 1.6;
+    line-height: 1.5; /* Réduction du line-height pour une lecture plus fluide */
 }
 
 /* Responsive Design: Formations */
@@ -715,75 +738,71 @@ html, body {
     }
 
     .formations-title {
-        font-size: 2.8em; /* Réduction de la taille du titre pour les écrans plus petits */
+        font-size: 3.8em; /* Taille réduite pour les écrans plus petits */
         margin-bottom: 20px;
     }
 
     .formation-item {
         flex-direction: column; /* Empile les éléments horizontalement */
         text-align: left;
-        padding: 15px;
+        padding: 30px;
     }
 
-    /* Alignement de la date et du logo */
     .formation-date {
-        font-size: 1.8em; /* Taille réduite pour la date */
+        font-size: 1.6em;
         position: relative;
-        top: 30px; /* Assure que la date est bien alignée */
+        top: 20px;
         left: -5px;
-
     }
 
     .formation-content {
-        flex-direction: row; /* Le contenu est maintenant aligné horizontalement */
+        flex-direction: column; /* Le contenu est maintenant aligné verticalement */
         gap: 15px;
-        align-items: center; /* Aligne la date et le logo */
+        align-items: flex-start;
     }
 
     .formation-logo {
-        width: 80px; /* Taille réduite pour le logo */
-        margin-top: 0; /* Réduction de l'espace au-dessus du logo */
+        width: 70px; /* Logo légèrement plus grand */
     }
 
     .formation-details h3 {
-        font-size: 1.6em; /* Taille réduite pour le titre */
+        font-size: 1.4em;
     }
 
     .formation-details p {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
     .formations-title {
-        font-size: 2.2em;
+        font-size: 3.8em; /* Taille réduite pour très petits écrans */
         margin-bottom: 10px;
     }
 
     .formation-item {
-        padding: 10px;
+        padding: 30px;
     }
 
     .formation-date {
-        font-size: 1.5em; /* Taille adaptée pour petits écrans */
+        font-size: 1.4em; /* Ajustement pour petits écrans */
         position: relative;
-        top: 30px; /* Assure que la date est en haut, alignée avec le logo */
+        top: 20px;
         left: -5px;
     }
 
     .formation-content {
-        flex-direction: row; /* Logo à gauche, texte à droite */
-        align-items: center; /* Aligne la date et le logo */
-        gap: 15px;
-        text-align: left; /* Aligne les éléments à gauche */
+        flex-direction: column;
+        gap: 12px; /* Espacement réduit */
+        align-items: flex-start;
     }
 
     .formation-logo {
-        width: 60px; /* Réduction supplémentaire pour le logo */
+        width: 55px; /* Logo plus petit */
     }
 
     .formation-details h3 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     .formation-details p {
@@ -806,7 +825,7 @@ html, body {
 }
 
 .social-links h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #A599FF; /* Couleur violette */
     margin-bottom: 60px; /* Réduction de l'espacement sous le titre */
     margin-top: 50px; /* Ajout d'espacement au-dessus du titre */
@@ -824,8 +843,8 @@ html, body {
 }
 
 .icons img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     transition: transform 0.3s ease;
 }
 
@@ -836,7 +855,7 @@ html, body {
 /* Responsive - ajustement pour les petits écrans (tablettes et petites résolutions) */
 @media (max-width: 768px) {
     .social-links h2 {
-        font-size: 2em; /* Réduction de la taille du texte pour les petits écrans */
+        font-size: 1.6em; /* Réduction de la taille du texte pour les petits écrans */
         margin-bottom: 50px; /* Espacement réduit sous le titre */
         margin-top: 40px; /* Espacement réduit au-dessus du titre */
     }
@@ -846,15 +865,15 @@ html, body {
     }
 
     .icons img {
-        width: 60px; /* Réduction de la taille des icônes */
-        height: 60px;
+        width: 40px; /* Réduction de la taille des icônes */
+        height: 40px;
     }
 }
 
 /* Responsive - ajustement pour les très petits écrans (smartphones) */
 @media (max-width: 480px) {
     .social-links h2 {
-        font-size: 1.6em; /* Réduction supplémentaire pour les très petits écrans */
+        font-size: 1.4em; /* Réduction supplémentaire pour les très petits écrans */
         margin-bottom: 40px; /* Espacement encore réduit sous le titre */
         margin-top: 20px; /* Espacement encore réduit au-dessus du titre */
     }
@@ -865,9 +884,10 @@ html, body {
 
     .icons img {
         width: 40px; /* Réduction encore plus petite pour les icônes */
-        height: 40px;
+        height: 30px;
     }
 }
+
 
 
 
@@ -1007,11 +1027,11 @@ form textarea:focus {
 
 /* Skill title styles */
 .skill-title1 {
-    font-size: 3.5em;
+    font-size: 4em;
     color: var(--highlight-color);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: left; /* Alignement à gauche pour le titre */
-    margin-left: 300px; /* Décalage du titre de 350px vers la droite */
+    margin-left: 340px; /* Décalage du titre de 350px vers la droite */
 }
 
 /* Skill title styles */
@@ -1098,20 +1118,20 @@ form textarea:focus {
 
 
 
-//* Accueil */
+/* Accueil */
 /* Pour garantir que les images sont responsives */
 .hero {
     margin-top: -80px; /* Ajoute un espacement au-dessus du contenu */
     margin-bottom: 150px; /* Ajoute un espacement en dessous du contenu */
-    padding: 4rem 5%;
+    padding: 3rem 5%;
     display: flex;
     height: 100vh;
     position: relative;
     flex-direction: column; /* Aligner verticalement les éléments sur mobile */
     justify-content: flex-start; /* Aligne le contenu en haut */
-  }
-  
-  .hero::before {
+}
+
+.hero::before {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -1122,22 +1142,22 @@ form textarea:focus {
     word-wrap: break-word; /* Permet de couper le texte si nécessaire */
     top: 0;
     left: 0;
-    font-size: 4rem; /* Augmenté pour rendre le texte plus visible sur mobile */
+    font-size: 4rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
     line-height: 1;
-  }
-  
-  .hero h1 {
-    font-size: 4rem;
+}
+
+.hero h1 {
+    font-size: 3rem;  /* Taille plus petite sur desktop */
     line-height: 1.5;
     text-align: left; /* Garder l'alignement à gauche pour le titre */
-  }
-  
-  .hero h1 > span {
+}
+
+.hero h1 > span {
     color: #A599FF;
     font-weight: 800;
-  }
-  
-  .hero_leftcontent {
+}
+
+.hero_leftcontent {
     width: 100%;
     height: fit-content;
     padding: 2rem 0.75rem;
@@ -1150,99 +1170,112 @@ form textarea:focus {
     border: 1px solid #c4c4c476;
     background-color: #c4c4c407;
     text-align: left; /* Aligner le texte à gauche */
-  }
-  
-  .hero_rightcontent {
+}
+
+.hero_rightcontent {
     background-color: #A273EE54;
-    width: 100%;
+    width: 60%; /* Ajuste la largeur à 60% pour éviter qu'il se rétrécisse trop */
     position: relative;
     top: 20%;
     bottom: 20%;
     z-index: -20;
     padding: 10px; /* Ajout de padding pour plus de visibilité */
-  }
-  
-  /* Responsive Design pour des écrans plus larges */
-  @media (min-width: 768px) {
+}
+
+/* Responsive Design pour des écrans plus larges */
+@media (min-width: 768px) {
     .hero {
-      padding: 4rem 15%;
-      flex-direction: row; /* Alignement en ligne sur grand écran */
+        padding: 4rem 15%;
+        flex-direction: row; /* Alignement en ligne sur grand écran */
     }
-  
+
     .hero::before {
-      font-size: 28rem; /* Ajuste la taille du texte */
+        font-size: 22rem; /* Ajuste la taille du texte */
     }
-  
+
     .hero h1 {
-      font-size: 6rem;
+        font-size: 5rem; /* Réduction de la taille sur desktop */
     }
-  
+
     .hero p {
-      font-size: 3rem;
+        font-size: 2rem; /* Ajuste la taille du texte */
     }
-  
+
     .hero_leftcontent {
-      width: 48rem;
-      left: 2%;
-      top: 10%;
-      padding: 4rem 3rem;
-      font-size: 3rem;
+        width: 48rem;
+        left: 2%;
+        top: 10%;
+        padding: 4rem 3rem;
+        font-size: 2rem; /* Réduit la taille du texte pour desktop */
     }
-  
+
     .hero_rightcontent {
-      width: 50%;
-      right: 2%;
-      top: 10%;
-      bottom: 10%;
+        width: 50%;
+        right: 2%;
+        top: 10%;
+        bottom: 10%;
     }
-  }
-  
-  /* Responsive Design pour les petits écrans (mobile) */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design pour les petits écrans (mobile) */
+@media (max-width: 768px) {
     .hero {
-      padding: 4rem 5%;
-      flex-direction: column; /* Maintient la colonne pour les petits écrans */
-      justify-content: flex-start; /* Aligne le contenu en haut */
+        padding: 4rem 5%;
+        flex-direction: column; /* Maintient la colonne pour les petits écrans */
+        justify-content: flex-start; /* Aligne le contenu en haut */
+        margin-bottom: -300px; /* Réduit l'espacement en dessous du contenu */
     }
-  
+
     .hero::before {
-      font-size: 4rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
-      line-height: 1.2;
-      top: 0;
-      left: 0;
+        font-size: 10rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
+        line-height: 1.2;
+        top: 0;
+        left: 0;
     }
-  
+
     .hero h1 {
-      font-size: 3rem; /* Taille du titre réduite pour mobile */
+        font-size: 3rem; /* Taille du titre réduite pour mobile */
     }
-  
+
     .hero_leftcontent {
-      padding: 2rem 0.75rem;
-      font-size: 1.5rem; /* Réduction de la taille du texte */
-      text-align: left; /* Alignement du texte à gauche */
-      margin-top: 2rem;
-      width: 100%;
-      height: auto;
+        padding: 2rem 0.75rem;
+        font-size: 1.5rem; /* Réduction de la taille du texte */
+        text-align: left; /* Alignement du texte à gauche */
+        margin-top: 2rem;
+        width: 80%;
+        height: auto;
     }
-  
+
     .hero_rightcontent {
-      width: 100%; /* Prend toute la largeur disponible */
-      position: relative;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -10;
+        width: calc(70% - 50px); /* 70% de la largeur moins 50px */
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 15%;
+        z-index: -10;
     }
-  }
-  
-  /* Petit ajustement sur mobile très petit */
-  @media (max-width: 480px) {
+    
+}
+
+/* Petit ajustement sur mobile très petit */
+@media (max-width: 480px) {
     .hero h1 {
-      font-size: 2.5rem; /* Taille encore réduite pour petits écrans */
+        font-size: 2.5rem; /* Taille encore réduite pour petits écrans */
     }
-  
+
     .hero_leftcontent {
-      font-size: 1.1rem; /* Réduction supplémentaire pour la lecture */
+        font-size: 1.1rem; /* Réduction supplémentaire pour la lecture */
     }
-  }
-  
+
+    .hero_rightcontent {
+        width: 80%; /* Augmente la largeur du carré violet */
+    }
+}
+
+
+
+
+
+
+
+
