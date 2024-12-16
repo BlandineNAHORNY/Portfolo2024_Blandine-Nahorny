@@ -6,7 +6,7 @@ get_header();
 <div class="project-page">
     <!-- Hero Section -->
 
-    <div data-title="PROJET PROJET" class="hero">
+    <div data-title="PROJET PROJET PROJET" class="hero">
     <div class="space-y-4 hero_leftcontent">
     <p class="project-date"><?php the_field('date_projet'); ?></p>
             <h1 class="project-name"><?php the_field('nom_projet'); ?></h1>
@@ -36,9 +36,15 @@ get_header();
 
         <!-- Voir le post Button -->
         <div class="view-post-button">
-            <a href="<?php the_field('voir_le_post'); ?>" class="button">Voir le post</a>
+            <a href="<?php the_field('voir_le_post'); ?>" class="button">Voir le projet</a>
         </div>
-        
+        <?php if (get_field('dossier_a_telecharge')): ?>
+    <div class="view-post-button">
+        <a href="<?php the_field('dossier_a_telecharge'); ?>" class="button">Dossier à télécharger</a>
+    </div>
+<?php endif; ?>
+
+
     </div>
 
 
@@ -109,8 +115,8 @@ get_header();
 
 
 
-    <!-- Styled Bar -->
-    <div class="styled-bar"></div>
+<!-- Styled Bar -->
+<div class="styled-bar"></div>
     
 
 <style>
@@ -205,6 +211,8 @@ get_header();
     }
 
     .hero_rightcontent1 {
+        width: 800px;
+        height: 500px;
         width: 80%; /* Augmente la largeur de l'image sur les écrans plus petits */
         margin-top: 4rem;
         
@@ -259,6 +267,15 @@ get_header();
 
 /* Ajustement pour très petits écrans (smartphones) */
 @media (max-width: 480px) {
+
+    .hero::before {
+        font-size: 6rem; /* Ajuste la taille du texte pour mobile */
+        line-height: 1.2;
+        top: 0;
+        left: 0;
+    }
+
+
     .hero h1 {
         font-size: 2.5rem; /* Taille encore réduite pour petits écrans */
     }
@@ -304,9 +321,9 @@ get_header();
     font-size: 1rem; /* Taille du texte */
     line-height: 1.6; /* Espacement des lignes */
     margin: 0 auto;
-    max-width: 1000px; /* Limiter la largeur */
+    max-width: 800px; /* Limiter la largeur pour ne pas trop étirer le texte */
     margin-top: 20px; /* Espacement au-dessus de la description */
-    padding: 0 20px; /* Espacement réduit sur les côtés */
+    padding: 0 50px; /* Ajoute de l'espace sur les côtés */
     color: white;
     line-height: 1.5; /* Améliore l'espacement des lignes pour plus de clarté */
 }
@@ -314,9 +331,17 @@ get_header();
 /* Responsive Design pour les écrans mobiles */
 @media (max-width: 768px) {
     .project-description {
-        padding: 0 10px; /* Réduit le padding latéral sur les petits écrans */
+        padding: 0 60px; /* Réduit le padding latéral sur les petits écrans */
+        max-width: 100%; /* Assure que la largeur est à 100% sur les petits écrans */
     }
 }
+
+@media (max-width: 480px) {
+    .project-description {
+        padding: 0 40px; /* Réduit encore le padding sur les très petits écrans */
+    }
+}
+
 
 
 .title-section {

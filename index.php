@@ -6,7 +6,7 @@ get_header();
 
 
 <div id="accueil">
-<div data-title="COMMUNITY" class="hero">
+<div data-title="COMMUNITY COMMUNITY COMMUNITY COMMUNITY COMMUNITY" class="hero">
     <div class="space-y-4 hero_leftcontent">
       <p>Bonjour,</p>
       <h1>Je m'appelle <span>Blandine</span></h1>
@@ -63,9 +63,8 @@ get_header();
 
 
 
-
+<h2 class="skill-title1">MES FORMATIONS ...</h2>
 <div id="formations"> 
-    <h2 class="formations-title">MES FORMATIONS ...</h2>
 
     <div class="formation-item">
     <span class="formation-date">2023 à 2026</span>
@@ -194,14 +193,10 @@ get_header();
         </div>
     </div>
 </div>
-
-</div>
-
-<div id="projets">
-    <!-- Contenu de la section Projets -->
 </div>
 
 <div id="contact">
+<div class="styled-bar"></div> 
     <h2>UNE QUESTION ? <br> UN PROJET ?</h2>
     <p>Pour le besoin de toutes informations complémentaires, ou une envie de collaborer ensemble, n'hésitez surtout pas à me laisser un message.</p>
 
@@ -221,15 +216,12 @@ get_header();
 
         <input type="submit" name="submit_contact" value="Envoyer" />
     </form>
-
-    <div class="styled-bar"></div>
     </div>
 </div>
 
 
-
-
 <div class="social-links">
+<div class="styled-bar1"></div>
     <h2>RETROUVEZ MOI ÉGALEMENT ICI !</h2>
     <div class="icons">
         <a href="https://github.com/BlandineNAHORNY" target="_blank">
@@ -254,3 +246,28 @@ get_header();
 
 
 <?php get_footer(); ?>
+
+<script>
+    const cards = document.querySelectorAll('.skill-card');
+
+cards.forEach(card => {
+    const handleOver = (event) => {
+        const { width, height, left, top } = card.getBoundingClientRect();
+        const mouseX = event.clientX - left - width/2;
+        const mouseY = event.clientY - top - height/2;
+
+        const rotateY = (mouseX / width) * 20;
+        const rotateX = (mouseY / height) * -20;
+
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    }
+
+    const resetTransform = () => {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+    }
+
+    card.addEventListener('mouseenter', handleOver);
+    card.addEventListener('mousemove', handleOver);
+    card.addEventListener('mouseleave', resetTransform);
+});
+</script>

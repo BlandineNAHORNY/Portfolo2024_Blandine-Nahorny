@@ -56,20 +56,17 @@ get_header();
             while ($projects_query->have_posts()) : $projects_query->the_post();
         ?>
 
-        <div class="project-item">
-            <a href="<?php the_permalink(); ?>" class="project-link">
-                <div class="project-image">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('medium'); ?>
-                    <?php endif; ?>
-                </div>
+        <a href="<?php the_permalink(); ?>" class="project-link">
+        <div class="project-item" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>'); background-size: cover; background-position: center;">
+            <section>
                 <h3 class="project-title"><?php the_title(); ?></h3>
                 <div class="project-btn">
-                    <a href="<?php the_permalink(); ?>" class="project-link-text">Voir le projet</a>
+                    <span class="project-link-text">Voir le projet</span>
                 </div>
-            </a>
+            </section>
         </div>
-
+    </a>
+    
         <?php
             endwhile;
             wp_reset_postdata(); // Restaure la requête globale après la boucle
@@ -79,8 +76,6 @@ get_header();
         ?>
     </div>
 </div>
-
-
 
 <style>
 /* Conteneur principal pour les projets */
@@ -144,11 +139,44 @@ get_header();
     justify-items: center;
     margin-top: 30px;
 }
-
 /* Style pour chaque élément de projet */
 .project-item {
-    text-align: center;
+    width: 300px;
+    height: 450px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    padding: 10rem 1rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(30, 27, 27, 0.00) 57.09%, #000 96.46%); /* Filtre noir par défaut */
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    transition: background 0.3s ease; /* Transition pour un changement en douceur */
+}
+
+/* Ajout du hover pour changer la couleur du filtre */
+.project-item:hover::before {
+    background: linear-gradient(180deg, rgba(30, 27, 27, 0.00) 57.09%, #7C38EB 100%); /* Filtre violet au survol */
+}
+
+.project-item section {
+    position: relative;
+    z-index: 2;
+}
+
+.project-item section > a {
+    width: fit-content;
 }
 
 /* Lien qui englobe toute la carte */
@@ -173,7 +201,7 @@ get_header();
 
 /* Titre du projet */
 .project-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: normal;
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
@@ -185,17 +213,18 @@ get_header();
     padding: 6px;
     font-size: 0.9rem;
     background-color: transparent;
-    color: #A599FF;
+    color: #FFFFFF;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
+    width: fit-content;
 }
 
 .project-link-text {
     font-size: 0.9rem;
     text-decoration: none;
-    color: #A599FF;
+    color: #FFFFFF;
     display: inline-block;
 }
 

@@ -50,6 +50,8 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
     gap: 30px;
     list-style: none;
     margin: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Liens du menu */
@@ -110,19 +112,20 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 .menu-items.active {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligner les éléments vers le haut */
+    justify-content: flex-start;
     align-items: center; /* Centrer les éléments horizontalement */
     position: fixed;
-    top: 50px; /* Décalage pour tenir compte du header, ajusté pour monter le menu */
+    top: 50px;
     left: 0;
-    width: 100%; /* Prendre toute la largeur de l'écran */
-    height: 100vh; /* Prend toute la hauteur de la page */
+    width: 100%;
+    height: 100vh;
     background-color: #111;
-    padding: 40px 20px; /* Espacement autour des éléments du menu */
+    padding: 40px 20px;
     list-style: none;
     z-index: 1000;
     text-align: center; /* Centrer le texte du menu */
 }
+
 
 /* Aligner le texte à droite dans les éléments du menu */
 .menu-items li {
@@ -254,30 +257,18 @@ Tags: Blandine Nahorny, Portfolio, BUT MMI, MMI, S.3, WordPress, Web, Webdesign,
 }
 
 
-
-
 /* Style de la barre de progression */
 #progress-bar {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 0; /* Initialement vide */
+    left: 0; /* Déplacer le début de la barre à gauche */
+    right: auto; /* Désactiver la valeur de right */
+    width: 100%; /* La barre occupe toute la largeur de la fenêtre */
     height: 5px;
     background-color: #A599FF; /* Couleur de la barre de progression */
     z-index: 9999; /* S'assure que la barre est au-dessus de tout */
     transition: width 0.25s ease-out; /* Animation pour rendre la transition fluide */
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -446,6 +437,15 @@ html, body {
     margin-top: 60px; /* Ajoute un espacement en bas pour respirer */
 }
 
+/* Bar de transition */
+.styled-bar1 {
+    height: 2px;                /* Épaisseur de la barre */
+    background-color: #A599FF;
+    width: 60%;                 /* Largeur par défaut */
+    margin: 20px auto;          /* Centre la barre avec de l'espacement en haut et en bas */
+    transition: width 0.3s ease; /* Ajoute une transition pour les changements de largeur */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .styled-bar {
@@ -488,7 +488,7 @@ html, body {
 }
 
 .about-title {
-    font-size: 4em; /* Taille augmentée */
+    font-size: 3em; /* Taille augmentée */
     color: #A599FF;
     font-weight: bold;
     position: relative;
@@ -527,12 +527,12 @@ html, body {
 }
 
 .about-text h3 {
-    font-size: 2.5em; /* Taille augmentée */
+    font-size: 1em; /* Taille augmentée */
     font-weight: bold;
     color: #fff;
     display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Espacement ajusté */
+    align-items: left;
+    margin-bottom: 8px; /* Espacement ajusté */
 }
 
 .approval-icon {
@@ -542,14 +542,14 @@ html, body {
 }
 
 .about-role {
-    font-size: 1.5em; /* Agrandit le texte du rôle */
+    font-size: 0.9em; /* Agrandit le texte du rôle */
     color: #A599FF;
     margin-top: -5px;
     margin-bottom: 20px;
 }
 
 .about-description {
-    font-size: 1.2em; /* Agrandit la description */
+    font-size: 1em; /* Agrandit la description */
     line-height: 1.8; /* Améliore la lisibilité */
     margin-bottom: 15px;
 }
@@ -561,7 +561,7 @@ html, body {
 
 .download-cv a {
     color: #fff;
-    font-size: 1.3em; /* Agrandit légèrement */
+    font-size: 1em; /* Agrandit légèrement */
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
@@ -657,12 +657,6 @@ html, body {
     border-radius: 10px;
 }
 
-.formations-title {
-    font-size: 4em; /* Réduit la taille du titre */
-    color: var(--highlight-color);
-    margin-bottom: 30px; /* Réduction de l'espace sous le titre */
-    text-align: left; /* Alignement à gauche pour le titre */
-}
 
 .formation-item {
     display: flex;
@@ -686,7 +680,7 @@ html, body {
 
 /* Date positionnée en haut, quel que soit le format */
 .formation-date {
-    font-size: 1.4em; /* Taille de la date réduite */
+    font-size: 1.2em; /* Taille de la date réduite */
     font-weight: bold;
     color: var(--highlight-color);
     position: absolute;
@@ -719,13 +713,13 @@ html, body {
 }
 
 .formation-details h3 {
-    font-size: 1.6em; /* Taille du titre réduite */
+    font-size: 1.2em; /* Taille du titre réduite */
     font-weight: bold;
     margin: 0;
 }
 
 .formation-details p {
-    font-size: 1.1em; /* Taille du texte réduite */
+    font-size: 1em; /* Taille du texte réduite */
     margin: 5px 0;
     line-height: 1.5; /* Réduction du line-height pour une lecture plus fluide */
 }
@@ -776,7 +770,7 @@ html, body {
 
 @media (max-width: 480px) {
     .formations-title {
-        font-size: 3.8em; /* Taille réduite pour très petits écrans */
+        font-size: 2.2em; /* Taille réduite pour très petits écrans */
         margin-bottom: 10px;
     }
 
@@ -1014,32 +1008,36 @@ form textarea:focus {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s ease; /* Vitesse réduite pour une animation plus douce */
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    transform-style: preserve-3d; /* Pour activer l'effet 3D */
     text-align: center; /* Centrer le texte à l'intérieur de la carte */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Skill title styles */
 .skill-title1 {
-    font-size: 4em;
+    font-size: 3em;
     color: var(--highlight-color);
     margin-bottom: 30px;
     text-align: left; /* Alignement à gauche pour le titre */
-    margin-left: 340px; /* Décalage du titre de 350px vers la droite */
+    margin-left: 20%; /* Décalage du titre de 350px vers la droite */
 }
 
 /* Skill title styles */
 .skill-title {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: #A599FF;
     margin-bottom: 15px; /* Espace plus grand sous le titre */
-    font-weight: bold; /* Mettre le titre en gras */
+}
+
+.skill-title p {
+    font-size: 1.2em;
+    color: #A599FF;
+    margin-bottom: 15px; /* Espace plus grand sous le titre */
 }
 
 /* Skill content styles */
@@ -1064,12 +1062,22 @@ form textarea:focus {
     width: 50px;
     height: 50px;
     border-radius: 5px;
+    transition: transform 0.3s ease, scale 0.3s ease;
+}
+
+.skill-card:hover .skills-logos img {
+    transform: translateY(-5px) scale(1.1); /* Déplacement vertical et léger zoom */
 }
 
 /* Hover effect for skill cards - 90 degree rotation */
 .skill-card:hover {
-    transform: rotateY(35deg); /* Rotation de 90° sur l'axe Y */
-    box-shadow: 0 0 20px 5px rgba(165, 153, 255, 0.8); /* Glow effect */
+    transform: scale(1.05) translateY(-5px); /* Applique un léger zoom et déplace la carte vers le haut */
+    box-shadow: 0 0 20px rgba(165, 153, 255, 0.8); /* Glow effect */
+}
+
+.skill-card:hover .skill-content {
+    transform: translateY(-15px); /* Décalage vers le haut du contenu pour l'effet de parallaxe */
+    transition: transform 0.5s ease-out; /* Transition fluide */
 }
 
 /* Focus effect when touched on mobile */
@@ -1091,7 +1099,7 @@ form textarea:focus {
     }
 
     .skill-title1 {
-        margin-left: 150px; /* Réduit le décalage pour les tablettes */
+        margin-left: 10%; /* Décalage du titre de 10% vers la droite */
     }
 }
 
@@ -1103,7 +1111,7 @@ form textarea:focus {
 
     .skill-title1 {
         margin-left: 10px; /* Pas de décalage pour les petits écrans */
-        font-size: 2em; /* Réduit la taille du titre sur téléphone */
+        font-size: 2.2em; /* Réduit la taille du titre sur téléphone */
     }
 
     .skill-title {
@@ -1118,8 +1126,8 @@ form textarea:focus {
 
 
 
+
 /* Accueil */
-/* Pour garantir que les images sont responsives */
 .hero {
     margin-top: -80px; /* Ajoute un espacement au-dessus du contenu */
     margin-bottom: 150px; /* Ajoute un espacement en dessous du contenu */
@@ -1142,12 +1150,12 @@ form textarea:focus {
     word-wrap: break-word; /* Permet de couper le texte si nécessaire */
     top: 0;
     left: 0;
-    font-size: 4rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
+    font-size: 4rem; /* Réduit la taille du texte sur mobile */
     line-height: 1;
 }
 
 .hero h1 {
-    font-size: 3rem;  /* Taille plus petite sur desktop */
+    font-size: 2.5rem;  /* Taille réduite sur desktop */
     line-height: 1.5;
     text-align: left; /* Garder l'alignement à gauche pour le titre */
 }
@@ -1166,7 +1174,7 @@ form textarea:focus {
     z-index: 10;
     backdrop-filter: blur(64px);
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Réduction de la taille du texte sur desktop */
     border: 1px solid #c4c4c476;
     background-color: #c4c4c407;
     text-align: left; /* Aligner le texte à gauche */
@@ -1174,7 +1182,8 @@ form textarea:focus {
 
 .hero_rightcontent {
     background-color: #A273EE54;
-    width: 60%; /* Ajuste la largeur à 60% pour éviter qu'il se rétrécisse trop */
+    width: 800px; /* Ajuste la largeur à 60% pour éviter qu'il se rétrécisse trop */
+    height: 500px;
     position: relative;
     top: 20%;
     bottom: 20%;
@@ -1182,7 +1191,7 @@ form textarea:focus {
     padding: 10px; /* Ajout de padding pour plus de visibilité */
 }
 
-/* Responsive Design pour des écrans plus larges */
+/* Responsive Design pour des écrans plus larges (tablettes et desktop) */
 @media (min-width: 768px) {
     .hero {
         padding: 4rem 15%;
@@ -1190,7 +1199,7 @@ form textarea:focus {
     }
 
     .hero::before {
-        font-size: 22rem; /* Ajuste la taille du texte */
+        font-size: 11.5rem; /* Ajuste la taille du texte */
     }
 
     .hero h1 {
@@ -1210,7 +1219,8 @@ form textarea:focus {
     }
 
     .hero_rightcontent {
-        width: 50%;
+        width: 800px;
+        height: 500px;
         right: 2%;
         top: 10%;
         bottom: 10%;
@@ -1223,11 +1233,11 @@ form textarea:focus {
         padding: 4rem 5%;
         flex-direction: column; /* Maintient la colonne pour les petits écrans */
         justify-content: flex-start; /* Aligne le contenu en haut */
-        margin-bottom: -300px; /* Réduit l'espacement en dessous du contenu */
+        margin-bottom: -550px; /* Réduit l'espacement en dessous du contenu */
     }
 
     .hero::before {
-        font-size: 10rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
+        font-size: 3.8rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
         line-height: 1.2;
         top: 0;
         left: 0;
@@ -1247,14 +1257,14 @@ form textarea:focus {
     }
 
     .hero_rightcontent {
-        width: calc(70% - 50px); /* 70% de la largeur moins 50px */
+        width: 800px; /* 70% de la largeur moins 50px */
+        height: 500px;
         position: relative;
         top: 0;
         bottom: 0;
         left: 15%;
         z-index: -10;
     }
-    
 }
 
 /* Petit ajustement sur mobile très petit */
@@ -1268,7 +1278,8 @@ form textarea:focus {
     }
 
     .hero_rightcontent {
-        width: 80%; /* Augmente la largeur du carré violet */
+        width: 800px; /* Augmente la largeur du carré violet */
+        height: 500px;
     }
 }
 

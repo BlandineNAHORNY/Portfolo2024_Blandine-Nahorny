@@ -26,13 +26,13 @@
 
             <!-- Navbar pour desktop et mobile -->
             <ul class="menu-items">
-                <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'header-menu',
-                    'container' => false,
-                    'items_wrap' => '%3$s', // Supprime les conteneurs UL/LI automatiques
-                ));
-                ?>
+                <!-- Les liens vont maintenant rediriger vers l'index sauf la page Projets qui renvoie vers la page correspondante -->
+                <li><a href="<?php echo home_url(); ?>#accueil">Accueil</a></li>
+                <li><a href="<?php echo home_url(); ?>#a-propos">À propos</a></li>
+                <li><a href="<?php echo home_url(); ?>#formations">Formations</a></li>
+                <li><a href="<?php echo home_url(); ?>#competences">Compétences</a></li>
+                <li><a href="<?php echo home_url('/projets'); ?>">Projets</a></li> <!-- Page Projets -->
+                <li><a href="<?php echo home_url(); ?>#contact">Contact</a></li>
                 <!-- Intégration de Weglot -->
                 <li class="weglot-menu-item">
                     <?php echo do_shortcode('[weglot_switcher]'); ?>
@@ -72,17 +72,16 @@
         });
     });
 
-
     document.addEventListener('scroll', function() {
-            var scrollTop = window.scrollY || document.documentElement.scrollTop;
-            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrollPercent = (scrollTop / docHeight) * 100;
-            document.getElementById('progress-bar').style.width = scrollPercent + '%';
-        });
-</script>
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrollPercent = (scrollTop / docHeight) * 100;
+        document.getElementById('progress-bar').style.width = scrollPercent + '%';
+    });
+    </script>
 
-<div id="sparkle-container"></div>
-<div id="progress-bar"></div>
+    <div id="sparkle-container"></div>
+    <div id="progress-bar"></div>
 
 </body>
 </html>
