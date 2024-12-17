@@ -48,20 +48,6 @@ get_header();
     </div>
 
 
-    <div class="project-navigation">
-    <?php if ( get_adjacent_post(false, '', true) ) : ?>
-        <a href="<?php echo get_permalink( get_adjacent_post(false, '', true) ); ?>" class="prev-button">Projet Précédent</a>
-    <?php else : ?>
-        <span class="prev-button disabled">Pas de projet précédent</span>
-    <?php endif; ?>
-
-    <?php if ( get_adjacent_post(false, '', false) ) : ?>
-        <a href="<?php echo get_permalink( get_adjacent_post(false, '', false) ); ?>" class="next-button">Projet Suivant</a>
-    <?php else : ?>
-        <span class="next-button disabled">Pas de projet suivant</span>
-    <?php endif; ?>
-</div>
-
 
 
 <div class="project-description">
@@ -89,10 +75,25 @@ get_header();
     ?>
 </div>
 
+
+<div class="project-navigation">
+    <?php if ( get_adjacent_post(false, '', true) ) : ?>
+        <a href="<?php echo get_permalink( get_adjacent_post(false, '', true) ); ?>" class="prev-button">Projet Précédent</a>
+    <?php else : ?>
+        <span class="prev-button disabled">Pas de projet précédent</span>
+    <?php endif; ?>
+
+    <?php if ( get_adjacent_post(false, '', false) ) : ?>
+        <a href="<?php echo get_permalink( get_adjacent_post(false, '', false) ); ?>" class="next-button">Projet Suivant</a>
+    <?php else : ?>
+        <span class="next-button disabled">Pas de projet suivant</span>
+    <?php endif; ?>
+</div>
+
+
 </div>
 
 <div class="social-links">
-<div class="styled-bar"></div> 
     <h2>RETROUVEZ MOI ÉGALEMENT ICI !</h2>
     <div class="icons">
         <a href="https://github.com/BlandineNAHORNY" target="_blank">
@@ -347,7 +348,7 @@ get_header();
 .title-section {
     font-size: 1.5rem; /* Réduit légèrement la taille des titres */
     font-weight: bold; /* Garder les titres en gras */
-    margin-bottom: 20px; /* Espacement supplémentaire entre les titres et le texte */
+    margin-bottom: 10px; /* Espacement supplémentaire entre les titres et le texte */
     line-height: 1.2;
 }
 
@@ -390,8 +391,9 @@ get_header();
 }
 
 .view-post-button {
-    margin-top: 30px;
+    margin-top: 10px;
     text-align: center;
+    margin-bottom: -40px;
 }
 
 .view-post-button .button {
@@ -657,8 +659,9 @@ em {
     display: flex;
     justify-content: space-between; /* Espacement entre les boutons */
     align-items: center;
-    margin-top: 20px; /* Espacement au-dessus des boutons */
-    padding: 0 20px; /* Marge interne pour éviter que ce soit collé aux bords */
+    margin-top: 80px; /* Espacement au-dessus des boutons */
+    margin-bottom: 40px; /* Espacement en dessous des boutons */
+    padding: 0 40px; /* Marge interne pour éviter que ce soit collé aux bords */
 }
 
 .prev-button, .next-button {
