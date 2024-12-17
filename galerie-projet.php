@@ -111,6 +111,7 @@ get_header();
     margin-top: 10px;
 }
 
+
 .filter-form select,
 .filter-form button {
     padding: 8px;
@@ -120,7 +121,15 @@ get_header();
     background-color: #A599FF;
     color: white;
     cursor: pointer;
+    border-radius: 5px;
 }
+
+@media (max-width: 430px) {
+    .filter-form select,
+    .filter-form button {
+        margin-top: 15px;
+    }
+    }
 
 .filter-form button {
     border-radius: 5px;
@@ -242,18 +251,24 @@ get_header();
         font-size: 1rem;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .project-item {
-        height: 350px;
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr 1fr; /* 2 cartes par ligne sur tablette */
+        }
+    
+        .project-item {
+            height: 350px; /* Ajuste la hauteur des projets sur les tablettes */
+        }
     }
 }
 
 @media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 carte par ligne sur téléphone */
+    }
+
     .gallery-title {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Réduit la taille du titre pour les petits écrans */
     }
 
     .project-title {
@@ -265,7 +280,7 @@ get_header();
     }
 
     .project-item {
-        height: 300px;
+        height: 300px; /* Ajuste la hauteur des projets sur les petits écrans */
     }
 }
 

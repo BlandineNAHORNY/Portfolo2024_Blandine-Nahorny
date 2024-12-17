@@ -291,10 +291,10 @@ get_header();
     }
 
     .hero_rightcontent1 img {
-        max-width: 70%; /* L'image reste à 100% de la largeur disponible */
-        margin-top: 1rem; /* Espacement réduit au-dessus de l'image */
-        margin-right: 4rem; /* Supprime la marge à droite de l'image */
-        margin-bottom: 15rem; /* Espacement réduit en dessous de l'image */
+        width: 200px; /* Augmente la largeur du carré violet */
+        height: 200px;
+        margin-top: -80px;
+        margin-left: 180px;
     }
 }
 

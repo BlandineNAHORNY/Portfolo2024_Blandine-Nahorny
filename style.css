@@ -1237,7 +1237,7 @@ form textarea:focus {
     }
 
     .hero::before {
-        font-size: 3.8rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
+        font-size: 3.6rem; /* Taille ajustée pour "COMMUNITY" pour mobile */
         line-height: 1.2;
         top: 0;
         left: 0;
@@ -1278,8 +1278,10 @@ form textarea:focus {
     }
 
     .hero_rightcontent {
-        width: 800px; /* Augmente la largeur du carré violet */
-        height: 500px;
+        width: 200px; /* Augmente la largeur du carré violet */
+        height: 200px;
+        margin-top: -180px;
+        margin-left: 120px;
     }
 }
 
