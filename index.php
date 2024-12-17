@@ -28,7 +28,10 @@ get_header();
                 <section class="about-name">
                     <h3>
                         Blandine Nahorny 
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Approval.svg" alt="Approbation" class="approval-icon">
+                            <a href="<?php echo home_url('/erreur404'); ?>">
+                                <img src="<?php echo get_template_directory_uri(); ?>/src/svg/Approval.svg" alt="Approbation" class="approval-icon">
+                            </a>
+
                     </h3>
                     <p class="about-role">Etudiante</p>
                 </section>

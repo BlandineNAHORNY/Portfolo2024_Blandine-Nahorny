@@ -355,6 +355,7 @@ html, body {
     margin: 0 20px; /* Ajoute de l'espace autour du logo */
 }
 
+
 /* Responsive design pour centrer le footer en version mobile */
 @media (max-width: 768px) {
     .site-footer {
